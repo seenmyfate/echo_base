@@ -19,7 +19,7 @@ The generator will add the gems listed below, along with the default layout/them
 
 And you're ready to get spiking - test out the authentication by visiting /auth/twitter (for example)
 
-Check out the docs on web-app-theme at http://github.com/pilu/web-app-theme for examples of how to make use og the layout generators
+Check out the docs on web-app-theme at http://github.com/pilu/web-app-theme for examples of how to make use of the layout generators
 
 ==Gems included:
 
