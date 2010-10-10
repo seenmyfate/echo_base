@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{echo_base}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["seenmyfate"]
@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
      "lib/generators/echo_base/templates/.rvmrc",
      "lib/generators/echo_base/templates/Capfile",
      "lib/generators/echo_base/templates/Gemfile",
-     "lib/generators/echo_base/templates/Gemfile.lock",
      "lib/generators/echo_base/templates/app/controllers/application_controller.rb",
      "lib/generators/echo_base/templates/app/controllers/sessions_controller.rb",
      "lib/generators/echo_base/templates/app/controllers/users_controller.rb",
