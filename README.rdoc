@@ -1,6 +1,47 @@
-= echo_base
+= Echo Base
+Is a starting point for fast prototyping of Rails 3 apps
 
-Description goes here.
+Generate a Rails 3 app, then include the gem in your Gemfile:
+
+    group :development do
+      gem 'echo_base'
+    end
+    
+Bundle and then run the generator:
+
+    rails g echo_base "my awesome app name"
+    
+The generator will add the gems listed below, along with the default layout/theme from the web-app-theme gem, and a very basic setup for omniauth. After running the generator, add your api keys to config/omniauth.yml and then:
+
+    bundle install
+    rake db:migrate
+
+And you're ready to get spiking
+
+Check out the docs on web-app-theme at http://github.com/pilu/web-app-theme for examples of how to make use oo the layout generators
+
+==Gems included:
+
+* Omniauth (http://github.com/intridea/omniauth)
+* Rspec2 (http://github.com/dchelimsky/rspec)
+* Infinity Test (http://github.com/tomas-stefano/infinity_test)
+* Cucumber (http://github.com/aslakhellesoy/cucumber)
+* Capybara (http://github.com/jnicklas/capybara)
+* Factory Girl (http://github.com/thoughtbot/factory_girl)
+* Webmock (http://github.com/bblimke/webmock)
+* Capistrano (http://github.com/capistrano/capistrano)
+* New Relic (http://github.com/newrelic/rpm)
+* Hoptoad (http://github.com/thoughtbot/hoptoad_notifier)
+* Jquery Rails (http://github.com/indirect/jquery-rails)
+* Will Paginate (http://github.com/mislav/will_paginate)
+* Dalli (http://github.com/mperham/dalli)
+* Web App Theme (http://github.com/pilu/web-app-theme)
+
+==Coming soon
+
+* Better layouts/cleaner markup
+* Formatastic integration
+* Full test suite for all generated files (cuke/rspec)
 
 == Note on Patches/Pull Requests
  
@@ -14,4 +55,4 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2010 seenmyfate. See LICENSE for details.
+Copyright (c) 2010 Seenmyfate. See LICENSE for details.
