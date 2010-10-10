@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{echo_base}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["seenmyfate"]
@@ -52,13 +52,10 @@ Gem::Specification.new do |s|
      "lib/generators/echo_base/templates/autotest/discover.rb",
      "lib/generators/echo_base/templates/config/cucumber.yml",
      "lib/generators/echo_base/templates/config/deploy.rb",
-     "lib/generators/echo_base/templates/config/environments/development.rb",
-     "lib/generators/echo_base/templates/config/environments/production.rb",
-     "lib/generators/echo_base/templates/config/environments/test.rb",
      "lib/generators/echo_base/templates/config/initializers/hoptoad.rb",
      "lib/generators/echo_base/templates/config/initializers/omniauth.rb",
-     "lib/generators/echo_base/templates/config/newrelic.yml.example",
-     "lib/generators/echo_base/templates/config/omniauth.yml.example",
+     "lib/generators/echo_base/templates/config/newrelic.yml",
+     "lib/generators/echo_base/templates/config/omniauth.yml",
      "lib/generators/echo_base/templates/config/routes.rb",
      "lib/generators/echo_base/templates/db/migrate/20101008210657_create_authorizations.rb",
      "lib/generators/echo_base/templates/db/migrate/20101009192412_create_users.rb",
