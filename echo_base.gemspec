@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{echo_base}
-  s.version = "0.0.4"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["seenmyfate"]
@@ -56,7 +56,6 @@ Gem::Specification.new do |s|
      "lib/generators/echo_base/templates/config/initializers/omniauth.rb",
      "lib/generators/echo_base/templates/config/newrelic.yml",
      "lib/generators/echo_base/templates/config/omniauth.yml",
-     "lib/generators/echo_base/templates/config/routes.rb",
      "lib/generators/echo_base/templates/db/migrate/20101008210657_create_authorizations.rb",
      "lib/generators/echo_base/templates/db/migrate/20101009192412_create_users.rb",
      "lib/generators/echo_base/templates/features/manage_authentications.feature",
