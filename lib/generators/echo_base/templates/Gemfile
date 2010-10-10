@@ -2,10 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'jquery-rails'
 gem 'will_paginate', '>= 3.0.pre2'
-gem 'formtastic'
 gem 'hoptoad_notifier'
 gem 'newrelic_rpm'
 gem 'rack-cache'
@@ -13,12 +10,14 @@ gem 'dalli'
 gem 'omniauth'
 
 group :development do
+  gem 'jquery-rails'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'unicorn'
   gem 'capistrano'
   gem 'capistrano-ext'
   gem 'awesome_print'
-  gem 'heroku'
   gem 'web-app-theme', '>= 0.6.2'
+  gem 'echo_base'
 end
 
 group :test, :cucumber do
