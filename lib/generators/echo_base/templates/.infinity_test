@@ -1,0 +1,25 @@
+infinity_test do
+
+  notifications :growl do
+    show_images :mode => :rails
+  end
+
+  use :rubies => %w(1.8.7 1.9.2 ree), :gemset => 'echo_base', :test_framework => :rspec
+
+  before(:each_ruby) do |environment|
+    #...
+  end
+
+  after(:each_ruby) do |environment|
+    #...
+  end        
+
+  before_run do
+    clear :terminal
+  end
+
+  after_run do
+    #... some code
+  end
+
+end

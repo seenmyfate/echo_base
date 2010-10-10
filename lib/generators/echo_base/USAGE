@@ -1,0 +1,5 @@
+Description:
+    Echo Base will give you a base app for rapid prototyping - it presumes (for now) that you like rspec, jquery, cucumber, and omniauth.  For more info checkout http://github.com/seenmyfate/echo_base
+
+Example:
+    rails generate echo_base "My Awesome App"
