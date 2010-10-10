@@ -1,5 +1,5 @@
 = Echo Base
-Is a starting point for fast prototyping of Rails 3 apps
+Is a starting point for fast prototyping of Rails 3 apps (demo here: http://echo-base.heroku.com)
 
 Generate a Rails 3 app, then include the gem in your Gemfile:
 
@@ -15,10 +15,11 @@ The generator will add the gems listed below, along with the default layout/them
 
     bundle install
     rake db:migrate
+    unicorn_rails
 
-And you're ready to get spiking
+And you're ready to get spiking - test out the authentication by visiting /auth/twitter (for example)
 
-Check out the docs on web-app-theme at http://github.com/pilu/web-app-theme for examples of how to make use oo the layout generators
+Check out the docs on web-app-theme at http://github.com/pilu/web-app-theme for examples of how to make use og the layout generators
 
 ==Gems included:
 
@@ -39,9 +40,12 @@ Check out the docs on web-app-theme at http://github.com/pilu/web-app-theme for 
 
 ==Coming soon
 
+* Better readme
 * Better layouts/cleaner markup
 * Formatastic integration
 * Full test suite for all generated files (cuke/rspec)
+* Heroku version
+* Tasks to input initial app config
 
 == Note on Patches/Pull Requests
  

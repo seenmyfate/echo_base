@@ -26,6 +26,8 @@ class EchoBaseGenerator < Rails::Generators::NamedBase
 
   def public_folder
     directory "public"
+    remove_file "public/index.html"
+    remove_file "public/images/rails.png"
   end
 
   def rspec
