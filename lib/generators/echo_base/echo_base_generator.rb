@@ -4,6 +4,12 @@ class EchoBaseGenerator < Rails::Generators::NamedBase
   def config
     directory "config"
   end
+  
+  def routes
+    route("resources :users")
+    route("match '/auth/:provider/callback', :to => 'sessions#create'")
+    route("root :to => 'users#index'")
+  end
 
   def migrations
     directory "db"
