@@ -17,7 +17,6 @@ class EchoBaseGenerator < Rails::Generators::NamedBase
 
   def gems
     copy_file "Gemfile"
-    copy_file "Gemfile.lock"
   end
 
   def capistrano
