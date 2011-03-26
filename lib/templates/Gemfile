@@ -1,0 +1,37 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.0.0'
+
+gem 'mysql'
+gem 'jquery-rails'
+gem 'will_paginate', '>= 3.0.pre2'
+gem 'formtastic'
+gem 'hoptoad_notifier'
+gem 'newrelic_rpm'
+gem 'rack-cache'
+gem 'dalli'
+gem 'omniauth'
+
+group :development do
+  gem 'unicorn'
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'awesome_print'
+  gem 'heroku'
+  gem 'web-app-theme', '>= 0.6.2'
+end
+
+group :test, :cucumber do
+  gem 'capybara'
+  gem 'jonrowe-database_cleaner', '0.5.2', :require => 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'rspec-rails', '>= 2.0.0.beta.20'
+  gem 'infinity_test'
+  gem 'factory_girl'
+  gem 'webmock'
+end
+
+group :production do
+  
+end

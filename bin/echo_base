@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+# -*- mode: ruby -*-
+require 'echo_base'
+
+ARGV << "--help" if ARGV.empty?
+
+EchoBase.start

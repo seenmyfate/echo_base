@@ -1,6 +1,62 @@
-= echo_base
+= Echo Base
+Is a starting point for fast prototyping of Rails 3 apps (demo here: http://echo-base.heroku.com/demo)
 
-Description goes here.
+You can install echo_base with:
+
+      gem install echo_base
+
+Then run the generator:
+
+    echo_base my_app_name
+    
+Additional options:
+
+    echo_base my_app_name --heroku=true --db=mongo
+    
+The generator will:
+
+* create a new Rails 3 app
+* add the gems listed below (and bundle)
+* install the default layout/theme from the web-app-theme gem
+* install Rspec and Cucumber, configured with Factory Girl and Webmock
+* install Devise
+* add subdomain support
+* add i18n support
+
+The generator will optionally:
+
+* configure nosql databases (mongo|redis|couchdb)
+* create a heroku app and install lots of add-ons
+
+Generate views with:
+
+    some webapp theme tasks
+
+==Gems included:
+
+* Devise
+* Reek
+* Rcov
+* Heroku
+* Taps
+* Omniauth (http://github.com/intridea/omniauth)
+* Rspec2 (http://github.com/dchelimsky/rspec)
+* Cucumber (http://github.com/aslakhellesoy/cucumber)
+* Capybara (http://github.com/jnicklas/capybara)
+* Factory Girl (http://github.com/thoughtbot/factory_girl)
+* Webmock (http://github.com/bblimke/webmock)
+* Capistrano (http://github.com/capistrano/capistrano)
+* New Relic (http://github.com/newrelic/rpm)
+* Hoptoad (http://github.com/thoughtbot/hoptoad_notifier)
+* Jquery Rails (http://github.com/indirect/jquery-rails)
+* Will Paginate (http://github.com/mislav/will_paginate)
+* Dalli (http://github.com/mperham/dalli)
+* Web App Theme (http://github.com/pilu/web-app-theme)
+
+==Coming soon
+
+* HTML5/CSS3 layouts
+* Formtastic option
 
 == Contributing to echo_base
  
@@ -14,6 +70,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 seenmyfate. See LICENSE.txt for
+Copyright (c) 2011 Seenmyfate. See LICENSE.txt for
 further details.
 
