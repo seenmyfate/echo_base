@@ -8,7 +8,7 @@ require "rails/generators/rails/app/app_generator"
 
 class EchoBase < Thor::Group
   include Thor::Actions
-  
+  argument :name
   #class_option :heroku, :default => :false
   #class_option :db, :default => 'sqlite', :desc => 'Database to use, options are couchdb, mongo, redis, mysql, postgres'
   
@@ -20,18 +20,15 @@ class EchoBase < Thor::Group
   
   def generate_rails_app
     invoke Rails::Generators::AppGenerator
+    inject_into_file "#{self.destination_root}/#{underscored}/config/routes.rb", "resources :users\n\tmatch '/auth/:provider/callback', :to => 'sessions#create'\n\troot :to => 'users#index'", :after => "Application.routes.draw do\n"
   end
   
   def app_files
-    directory 'app', :force => true
+    directory 'app/controllers', :force => true
   end
   
   def gemfile
     copy_file 'Gemfile', :force => true
-  end
-
-  def routes
-    inject_into_file "#{self.destination_root}/#{underscored}/config/routes.rb", "resources :users\nmatch '/auth/:provider/callback', :to => 'sessions#create'\nroot :to => 'users#index'", :after => "Application.routes.draw do\n"
   end
   
   def config
@@ -89,7 +86,11 @@ class EchoBase < Thor::Group
   end
   
   def git
-    run 'git init'
+    begin
+      run 'git init;git commit -a -m "Initial Commit"'
+    rescue
+      say "Git fail"
+    end
   end
   
   def cleanup
