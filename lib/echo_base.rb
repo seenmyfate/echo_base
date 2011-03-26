@@ -31,13 +31,11 @@ class EchoBase < Thor::Group
   end
 
   def routes
-    route('resources :users')
-    route("match '/auth/:provider/callback', :to => 'sessions#create'")
-    route("root :to => 'users#index'")
+    inject_into_file "#{self.destination_root}/#{underscored}/config/routes.rb", "resources :users\nmatch '/auth/:provider/callback', :to => 'sessions#create'\nroot :to => 'users#index'", :after => "Application.routes.draw do\n"
   end
   
   def config
-    directory 'config', :force => true
+    directory 'config'
     # application rb stuff:
     # include lib files
     # include generators
@@ -108,6 +106,15 @@ class EchoBase < Thor::Group
   
   protected
 
+    def camelized
+      @camelized ||= name.camelize
+    end
+
+    def underscored
+      @underscored ||= name.underscore
+    end
+    
+    
     def heroku?
       options[:heroku] == 'true'
     end
