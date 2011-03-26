@@ -22,6 +22,11 @@ class EchoBase < Thor::Group
     invoke Rails::Generators::AppGenerator
     inject_into_file "#{self.destination_root}/#{underscored}/config/routes.rb", "resources :users\n\tmatch '/auth/:provider/callback', :to => 'sessions#create'\n\troot :to => 'users#index'", :after => "Application.routes.draw do\n"
   end
+
+  def change_dir
+    puts "*********** #{destination_root}"
+    FileUtils.cd(destination_root)
+  end
   
   def app_files
     directory 'app/controllers', :force => true
