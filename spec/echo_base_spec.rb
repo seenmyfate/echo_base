@@ -8,7 +8,7 @@ describe "EchoBase" do
     end
   
     it "should generate a rails app" do
-    
+      assert
     end
 
     it "should overwrite the default Gemfile" do

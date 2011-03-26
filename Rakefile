@@ -8,7 +8,14 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 require 'rake'
+require 'rake/testtask'
 
+Rake::TestTask.new(:test) do |t|
+  t.libs << 'lib'
+  t.libs << 'test'
+  t.pattern = 'test/*_test.rb'
+  t.verbose = true
+end
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options

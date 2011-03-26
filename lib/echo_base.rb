@@ -13,7 +13,6 @@ class EchoBase < Thor::Group
   #class_option :db, :default => 'sqlite', :desc => 'Database to use, options are couchdb, mongo, redis, mysql, postgres'
   
   def self.source_root
-    puts "App name= #{name}"
     @_source_root ||= File.expand_path('../templates/', __FILE__)
   end
                                 
@@ -23,17 +22,22 @@ class EchoBase < Thor::Group
     invoke Rails::Generators::AppGenerator
   end
   
+  def app_files
+    directory 'app', :force => true
+  end
+  
   def gemfile
     copy_file 'Gemfile', :force => true
   end
 
   def routes
-    #route('resources :users')
-    #route('match '/auth/:provider/callback', :to => 'sessions#create'')
-    #route('root :to => 'users#index'')
+    route('resources :users')
+    route("match '/auth/:provider/callback', :to => 'sessions#create'")
+    route("root :to => 'users#index'")
   end
   
   def config
+    directory 'config', :force => true
     # application rb stuff:
     # include lib files
     # include generators
@@ -42,15 +46,16 @@ class EchoBase < Thor::Group
   
   def migrations
     directory 'db', :force => true
-    run 'rake db:create:all;rake db:migrate'
+    run 'rake db:create:all'
+    run 'rake db:migrate'
   end
   
-  def styles
-    directory 'db', :force => true
+  def public
+    directory 'public', :force => true
   end
   
   def bundle
-    
+    run 'bundle'
   end
   
   def dot_files
