@@ -9,6 +9,7 @@ require "rails/generators/rails/app/app_generator"
 class EchoBase < Thor::Group
   include Thor::Actions
   argument :name
+  
   #class_option :heroku, :default => :false
   #class_option :db, :default => 'sqlite', :desc => 'Database to use, options are couchdb, mongo, redis, mysql, postgres'
   
@@ -20,46 +21,41 @@ class EchoBase < Thor::Group
   
   def generate_rails_app
     invoke Rails::Generators::AppGenerator
-    inject_into_file "#{self.destination_root}/#{underscored}/config/routes.rb", "resources :users\n\tmatch '/auth/:provider/callback', :to => 'sessions#create'\n\troot :to => 'users#index'", :after => "Application.routes.draw do\n"
-  end
-
-  def change_dir
-    puts "*********** #{destination_root}"
-    FileUtils.cd(destination_root)
+    inject_into_file "#{app_path}/config/routes.rb", "resources :users\n\tmatch '/auth/:provider/callback', :to => 'sessions#create'\n\troot :to => 'users#index'", :after => "Application.routes.draw do\n"
   end
   
   def app_files
-    directory 'app/controllers', :force => true
+    directory 'app', "#{app_path}/app", :force => true
   end
   
   def gemfile
-    copy_file 'Gemfile', :force => true
+    copy_file 'Gemfile', "#{app_path}/Gemfile", :force => true
   end
   
   def config
-    directory 'config'
+    directory 'config', "#{app_path}/config"
     # application rb stuff:
     # include lib files
     # include generators
     # include js defaults
   end
   
+  def bundle
+    run 'bundle'
+  end
+  
   def migrations
-    directory 'db', :force => true
+    directory 'db', "#{app_path}/db", :force => true
     run 'rake db:create:all'
     run 'rake db:migrate'
   end
   
   def public
-    directory 'public', :force => true
-  end
-  
-  def bundle
-    run 'bundle'
+    directory 'public', "#{app_path}/public", :force => true
   end
   
   def dot_files
-    #git ignore
+    copy_file 'gitignore', "#{app_path}/.gitignore", :force => true
     #rvmrc
   end
   
@@ -92,7 +88,7 @@ class EchoBase < Thor::Group
   
   def git
     begin
-      run 'git init;git commit -a -m "Initial Commit"'
+      run 'git init;git add .;git commit -a -m "Initial Commit"'
     rescue
       say "Git fail"
     end
@@ -112,6 +108,10 @@ class EchoBase < Thor::Group
   
   protected
 
+    def app_path
+      @app_path ||= "#{self.destination_root}/#{underscored}"
+    end
+    
     def camelized
       @camelized ||= name.camelize
     end

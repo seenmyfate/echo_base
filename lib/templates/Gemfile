@@ -11,6 +11,7 @@ gem 'newrelic_rpm'
 gem 'rack-cache'
 gem 'dalli'
 gem 'omniauth'
+gem 'sqlite3'
 
 group :development do
   gem 'unicorn'

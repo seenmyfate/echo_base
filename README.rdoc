@@ -9,9 +9,7 @@ Then run the generator:
 
     echo_base my_app_name
     
-Additional options:
-
-    echo_base my_app_name --heroku=true --db=mongo
+Additional options coming soon
     
 The generator will:
 
