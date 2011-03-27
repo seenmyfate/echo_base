@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{echo_base}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["seenmyfate"]
@@ -22,26 +22,10 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     "Gemfile",
-    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
-    "app/controllers/application_controller.rb",
-    "app/controllers/sessions_controller.rb",
-    "app/controllers/users_controller.rb",
-    "app/models/authorization.rb",
-    "app/models/user.rb",
-    "app/views/layouts/application.html.erb",
-    "app/views/shared/_js.html.erb",
-    "app/views/users/_form.html.erb",
-    "app/views/users/_sidebar.html.erb",
-    "app/views/users/edit.html.erb",
-    "app/views/users/index.html.erb",
-    "app/views/users/new.html.erb",
-    "app/views/users/show.html.erb",
     "bin/echo_base",
-    "db/migrate/20101008210657_create_authorizations.rb",
-    "db/migrate/20101009192412_create_users.rb",
     "echo_base.gemspec",
     "lib/echo_base.rb",
     "lib/templates/Capfile",
