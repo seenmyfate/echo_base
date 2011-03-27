@@ -8,7 +8,7 @@ require "rails/generators/rails/app/app_generator"
 
 class EchoBase < Thor::Group
   include Thor::Actions
-  #argument :name
+  argument :name
   
   #class_option :heroku, :default => :false
   #class_option :db, :default => 'sqlite', :desc => 'Database to use, options are couchdb, mongo, redis, mysql, postgres'
@@ -34,6 +34,7 @@ class EchoBase < Thor::Group
   
   def config
     directory 'config', "#{app_path}/config"
+    copy_file 'omniauth.yml', "#{app_path}/omniauth.yml", :force => true
     # application rb stuff:
     # include lib files
     # include generators
@@ -93,7 +94,6 @@ class EchoBase < Thor::Group
   def cleanup
     remove_file 'public/index.html'
     remove_file 'public/images/rails.png'
-    #remove prototype
   end
   
   def done
