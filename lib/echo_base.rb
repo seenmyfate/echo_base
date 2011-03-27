@@ -8,7 +8,7 @@ require "rails/generators/rails/app/app_generator"
 
 class EchoBase < Thor::Group
   include Thor::Actions
-  argument :name
+  #argument :name
   
   #class_option :heroku, :default => :false
   #class_option :db, :default => 'sqlite', :desc => 'Database to use, options are couchdb, mongo, redis, mysql, postgres'
@@ -69,15 +69,11 @@ class EchoBase < Thor::Group
   end
   
   def rspec
-    #run rspec generator
-    # alter rspec files
-    # add tests
+    run 'rails g rspec:install'
   end
   
   def cucumber
-    #run cucumber generator
-    # alter rspec files
-    # add tests
+    run 'rails g cucumber:install'
   end
   
   def heroku
@@ -101,7 +97,7 @@ class EchoBase < Thor::Group
   end
   
   def done
-    say "all done"
+    say "all done - fire up your app with unicorn"
   end
   
   
