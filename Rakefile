@@ -20,7 +20,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "echo_base"
-  gem.version = "0.0.1"
+  gem.version = "0.2.0"
   gem.homepage = "http://github.com/seenmyfate/echo_base"
   gem.license = "MIT"
   gem.summary = %Q{A starting point for fast prototyping of Rails 3 apps}

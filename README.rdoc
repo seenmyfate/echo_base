@@ -18,17 +18,8 @@ The generator will:
 * install the default layout/theme from the web-app-theme gem
 * install Rspec and Cucumber, configured with Factory Girl and Webmock
 
-Generate views with:
-
-    some webapp theme tasks
-
 ==Gems included:
 
-* Devise
-* Reek
-* Rcov
-* Heroku
-* Taps
 * Omniauth (http://github.com/intridea/omniauth)
 * Rspec2 (http://github.com/dchelimsky/rspec)
 * Cucumber (http://github.com/aslakhellesoy/cucumber)
@@ -45,13 +36,14 @@ Generate views with:
 
 ==Coming soon
 
-* HTML5/CSS3 layouts (web theme rework)
-* Heroku support
+* HTML5/CSS3 layouts
+* Better web theme
+* Heroku integration
+* Heroku add-on support
 * Devise setup
 * Full i18n support
 * Database options (postgres|redis|couch)
-* Better test options (capybara|steak|minitest)
-* Create a heroku app and install lots of add-ons
+* Test options (capybara|steak|minitest)
 
 == Contributing to echo_base
  
