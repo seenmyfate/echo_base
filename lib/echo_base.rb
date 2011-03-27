@@ -81,6 +81,11 @@ class EchoBase < Thor::Group
     # heroku addons add
     # 
   end
+    
+  def cleanup
+    remove_file "#{app_path}/public/index.html"
+    remove_file "#{app_path}/public/images/rails.png"
+  end
   
   def git
     begin
@@ -88,11 +93,6 @@ class EchoBase < Thor::Group
     rescue
       say "Git fail"
     end
-  end
-  
-  def cleanup
-    remove_file "#{app_path}/public/index.html"
-    remove_file "#{app_path}/public/images/rails.png"
   end
   
   def done
