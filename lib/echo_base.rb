@@ -34,7 +34,6 @@ class EchoBase < Thor::Group
   
   def config
     directory 'config', "#{app_path}/config"
-    copy_file 'omniauth.yml', "#{app_path}/omniauth.yml", :force => true
     # application rb stuff:
     # include lib files
     # include generators

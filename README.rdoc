@@ -1,5 +1,5 @@
 = Echo Base
-Is a Rails generator for fast prototyping of Rails 3 apps (demo here: http://echo-base.heroku.com/demo)
+Is a starting point for fast prototyping of Rails 3 apps (demo here: http://echo-base.heroku.com/demo)
 
 You can install echo_base with:
 
@@ -17,11 +17,6 @@ The generator will:
 * add the gems listed below (and bundle)
 * install the default layout/theme from the web-app-theme gem
 * install Rspec and Cucumber, configured with Factory Girl and Webmock
-
-The generator will optionally:
-
-* configure nosql databases (mongo|redis|couchdb)
-* create a heroku app and install lots of add-ons
 
 Generate views with:
 
@@ -54,6 +49,9 @@ Generate views with:
 * Heroku support
 * Devise setup
 * Full i18n support
+* Database options (postgres|redis|couch)
+* Better test options (capybara|steak|minitest)
+* Create a heroku app and install lots of add-ons
 
 == Contributing to echo_base
  
