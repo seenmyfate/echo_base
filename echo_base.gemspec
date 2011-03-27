@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["seenmyfate"]
   s.date = %q{2011-03-26}
   s.default_executable = %q{echo_base}
-  s.description = %q{longer description of your gem}
+  s.description = %q{Generates everything you need to get moving fas}
   s.email = %q{seenmyfate@gmail.com}
   s.executables = ["echo_base"]
   s.extra_rdoc_files = [
@@ -26,60 +26,32 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "app/controllers/application_controller.rb",
+    "app/controllers/sessions_controller.rb",
+    "app/controllers/users_controller.rb",
+    "app/models/authorization.rb",
+    "app/models/user.rb",
+    "app/views/layouts/application.html.erb",
+    "app/views/shared/_js.html.erb",
+    "app/views/users/_form.html.erb",
+    "app/views/users/_sidebar.html.erb",
+    "app/views/users/edit.html.erb",
+    "app/views/users/index.html.erb",
+    "app/views/users/new.html.erb",
+    "app/views/users/show.html.erb",
     "bin/echo_base",
+    "db/migrate/20101008210657_create_authorizations.rb",
+    "db/migrate/20101009192412_create_users.rb",
     "echo_base.gemspec",
-    "echo_test/.gitignore",
-    "echo_test/Gemfile",
-    "echo_test/README",
-    "echo_test/Rakefile",
-    "echo_test/app/controllers/application_controller.rb",
-    "echo_test/app/helpers/application_helper.rb",
-    "echo_test/app/views/layouts/application.html.erb",
-    "echo_test/config.ru",
-    "echo_test/config/application.rb",
-    "echo_test/config/boot.rb",
-    "echo_test/config/database.yml",
-    "echo_test/config/environment.rb",
-    "echo_test/config/environments/development.rb",
-    "echo_test/config/environments/production.rb",
-    "echo_test/config/environments/test.rb",
-    "echo_test/config/initializers/backtrace_silencers.rb",
-    "echo_test/config/initializers/inflections.rb",
-    "echo_test/config/initializers/mime_types.rb",
-    "echo_test/config/initializers/secret_token.rb",
-    "echo_test/config/initializers/session_store.rb",
-    "echo_test/config/locales/en.yml",
-    "echo_test/config/routes.rb",
-    "echo_test/db/seeds.rb",
-    "echo_test/lib/tasks/.gitkeep",
-    "echo_test/public/404.html",
-    "echo_test/public/422.html",
-    "echo_test/public/500.html",
-    "echo_test/public/favicon.ico",
-    "echo_test/public/images/rails.png",
-    "echo_test/public/index.html",
-    "echo_test/public/javascripts/application.js",
-    "echo_test/public/javascripts/controls.js",
-    "echo_test/public/javascripts/dragdrop.js",
-    "echo_test/public/javascripts/effects.js",
-    "echo_test/public/javascripts/prototype.js",
-    "echo_test/public/javascripts/rails.js",
-    "echo_test/public/robots.txt",
-    "echo_test/public/stylesheets/.gitkeep",
-    "echo_test/script/rails",
-    "echo_test/test/performance/browsing_test.rb",
-    "echo_test/test/test_helper.rb",
-    "echo_test/vendor/plugins/.gitkeep",
     "lib/echo_base.rb",
     "lib/templates/Capfile",
     "lib/templates/Gemfile",
-    "lib/templates/Gemfile.lock",
     "lib/templates/app/controllers/application_controller.rb",
     "lib/templates/app/controllers/sessions_controller.rb",
     "lib/templates/app/controllers/users_controller.rb",
     "lib/templates/app/models/authorization.rb",
     "lib/templates/app/models/user.rb",
-    "lib/templates/app/views/layouts/application.html.erb",
+    "lib/templates/app/views/layouts/application.html.erb.tt",
     "lib/templates/app/views/shared/_js.html.erb",
     "lib/templates/app/views/users/_form.html.erb",
     "lib/templates/app/views/users/_sidebar.html.erb",
@@ -87,23 +59,15 @@ Gem::Specification.new do |s|
     "lib/templates/app/views/users/index.html.erb",
     "lib/templates/app/views/users/new.html.erb",
     "lib/templates/app/views/users/show.html.erb",
-    "lib/templates/autotest/discover.rb",
-    "lib/templates/config/cucumber.yml",
     "lib/templates/config/deploy.rb",
     "lib/templates/config/initializers/hoptoad.rb",
     "lib/templates/config/initializers/omniauth.rb",
     "lib/templates/config/newrelic.yml.example",
+    "lib/templates/config/omniauth.yml",
     "lib/templates/config/omniauth.yml.example",
-    "lib/templates/config/routes.rb",
     "lib/templates/db/migrate/20101008210657_create_authorizations.rb",
     "lib/templates/db/migrate/20101009192412_create_users.rb",
-    "lib/templates/features/manage_authentications.feature",
-    "lib/templates/features/manage_users.feature",
-    "lib/templates/features/step_definitions/authentication_steps.rb",
-    "lib/templates/features/step_definitions/users_steps.rb",
-    "lib/templates/features/step_definitions/web_steps.rb",
-    "lib/templates/features/support/env.rb",
-    "lib/templates/features/support/paths.rb",
+    "lib/templates/gitignore",
     "lib/templates/public/404.html",
     "lib/templates/public/422.html",
     "lib/templates/public/500.html",
@@ -170,17 +134,6 @@ Gem::Specification.new do |s|
     "lib/templates/public/stylesheets/web-app-theme/themes/default/images/button-background.png",
     "lib/templates/public/stylesheets/web-app-theme/themes/default/images/menubar-background.png",
     "lib/templates/public/stylesheets/web-app-theme/themes/default/style.css",
-    "lib/templates/spec/controllers/sessions_controller_spec.rb",
-    "lib/templates/spec/controllers/users_controller_spec.rb",
-    "lib/templates/spec/helpers/users_helper_spec.rb",
-    "lib/templates/spec/models/authorization_spec.rb",
-    "lib/templates/spec/models/user_spec.rb",
-    "lib/templates/spec/routing/users_routing_spec.rb",
-    "lib/templates/spec/spec_helper.rb",
-    "lib/templates/spec/views/users/edit.html.erb_spec.rb",
-    "lib/templates/spec/views/users/index.html.erb_spec.rb",
-    "lib/templates/spec/views/users/new.html.erb_spec.rb",
-    "lib/templates/spec/views/users/show.html.erb_spec.rb",
     "spec/echo_base_spec.rb",
     "spec/spec_helper.rb"
   ]
@@ -188,7 +141,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{one-line summary of your gem}
+  s.summary = %q{A starting point for fast prototyping of Rails 3 apps}
   s.test_files = [
     "spec/echo_base_spec.rb",
     "spec/spec_helper.rb"
@@ -202,6 +155,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rails>, ["~> 3.0.5"])
       s.add_runtime_dependency(%q<cucumber-rails>, ["~> 0.3.2"])
       s.add_runtime_dependency(%q<rspec-rails>, ["~> 2.3.1"])
+      s.add_development_dependency(%q<test-unit>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_development_dependency(%q<yard>, ["~> 0.6.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -209,12 +163,13 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<reek>, ["~> 1.2.8"])
       s.add_runtime_dependency(%q<thor>, ["~> 0.14"])
-      s.add_runtime_dependency(%q<rails>, ["~> 3.0.3"])
+      s.add_runtime_dependency(%q<rails>, ["~> 3.0.5"])
       s.add_runtime_dependency(%q<rake>, ["~> 0.8"])
     else
       s.add_dependency(%q<rails>, ["~> 3.0.5"])
       s.add_dependency(%q<cucumber-rails>, ["~> 0.3.2"])
       s.add_dependency(%q<rspec-rails>, ["~> 2.3.1"])
+      s.add_dependency(%q<test-unit>, [">= 0"])
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_dependency(%q<yard>, ["~> 0.6.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -222,13 +177,14 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<reek>, ["~> 1.2.8"])
       s.add_dependency(%q<thor>, ["~> 0.14"])
-      s.add_dependency(%q<rails>, ["~> 3.0.3"])
+      s.add_dependency(%q<rails>, ["~> 3.0.5"])
       s.add_dependency(%q<rake>, ["~> 0.8"])
     end
   else
     s.add_dependency(%q<rails>, ["~> 3.0.5"])
     s.add_dependency(%q<cucumber-rails>, ["~> 0.3.2"])
     s.add_dependency(%q<rspec-rails>, ["~> 2.3.1"])
+    s.add_dependency(%q<test-unit>, [">= 0"])
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
     s.add_dependency(%q<yard>, ["~> 0.6.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -236,7 +192,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<reek>, ["~> 1.2.8"])
     s.add_dependency(%q<thor>, ["~> 0.14"])
-    s.add_dependency(%q<rails>, ["~> 3.0.3"])
+    s.add_dependency(%q<rails>, ["~> 3.0.5"])
     s.add_dependency(%q<rake>, ["~> 0.8"])
   end
 end
