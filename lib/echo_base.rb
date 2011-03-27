@@ -91,12 +91,12 @@ class EchoBase < Thor::Group
   end
   
   def cleanup
-    remove_file 'public/index.html'
-    remove_file 'public/images/rails.png'
+    remove_file "#{app_path}/public/index.html"
+    remove_file "#{app_path}/public/images/rails.png"
   end
   
   def done
-    say "all done - fire up your app with unicorn"
+    say "all done"
   end
   
   
