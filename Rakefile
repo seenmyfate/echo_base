@@ -23,8 +23,8 @@ Jeweler::Tasks.new do |gem|
   gem.version = "0.0.1"
   gem.homepage = "http://github.com/seenmyfate/echo_base"
   gem.license = "MIT"
-  gem.summary = %Q{ one-line summary of your gem}
-  gem.description = %Q{longer description of your gem}
+  gem.summary = %Q{A starting point for fast prototyping of Rails 3 apps}
+  gem.description = %Q{Generates everything you need to get moving fas}
   gem.email = "seenmyfate@gmail.com"
   gem.authors = ["seenmyfate"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
@@ -32,7 +32,7 @@ Jeweler::Tasks.new do |gem|
   gem.bindir = "bin"
   gem.executables = %w(echo_base)
   gem.add_dependency("thor", "~> 0.14")
-  gem.add_dependency("rails", "~> 3.0.3")
+  gem.add_dependency("rails", "~> 3.0.5")
   gem.add_dependency("rake", "~> 0.8")
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
